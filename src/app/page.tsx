@@ -5,6 +5,7 @@ import { FeaturesSection } from "@/components/sections/FeaturesSection";
 import { ResultsSection } from "@/components/sections/ResultsSection";
 import { EventsSection } from "@/components/sections/EventsSection";
 import { CompanySection } from "@/components/sections/CompanySection";
+import { MaterialsSection } from "@/components/sections/MaterialsSection";
 import { GreetingSection } from "@/components/sections/GreetingSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/layout/Footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <ResultsSection />
         <EventsSection />
         <CompanySection />
+        <MaterialsSection />
         <GreetingSection />
         <ContactSection />
       </main>

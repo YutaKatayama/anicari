@@ -16,6 +16,7 @@ export const MAIN_NAV_LINKS: NavLink[] = [
   { label: "RESULTS", href: "#results" },
   { label: "EVENTS", href: "#events" },
   { label: "COMPANY", href: "#company" },
+  { label: "MATERIALS", href: "#materials" },
   { label: "MESSAGE", href: "#greeting" },
   { label: "CONTACT", href: "#contact" },
 ];
