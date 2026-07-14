@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="48" viewBox="0 0 320 48" fill="none">
+  <text x="0" y="38" font-family="Lato, sans-serif" font-size="36" font-weight="900" letter-spacing="4" fill="#FFFFFF">AniCari</text>
+  <circle cx="228" cy="28" r="8" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="256" cy="28" r="8" fill="#FFFFFF" opacity="0.9"/>
+  <text x="268" y="38" font-family="Lato, sans-serif" font-size="36" font-weight="900" fill="#FFFFFF">.</text>
+</svg>
