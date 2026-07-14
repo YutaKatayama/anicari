@@ -38,14 +38,14 @@ export function Header() {
           isScrolled ? "bg-surface/95 shadow-sm backdrop-blur-sm" : "bg-transparent"
         }`}
       >
-        <Link href="/" className="logo absolute top-5 left-5 z-[999]">
+        <Link href="/" className="logo absolute top-4 left-4 z-[999] sm:top-5 sm:left-5">
           <Image
             src="/logo.svg"
             alt={COMPANY.name}
             width={140}
             height={20}
             priority
-            className={`h-auto w-full max-w-[140px] object-contain transition-all duration-300 ${
+            className={`h-auto w-full max-w-[120px] object-contain transition-all duration-300 sm:max-w-[140px] ${
               isScrolled ? "" : "brightness-0 invert"
             }`}
           />

@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={`${lato.variable} ${notoSansJp.variable}`}>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen overflow-x-hidden antialiased">
         <Header />
         {children}
       </body>

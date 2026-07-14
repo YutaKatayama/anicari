@@ -33,16 +33,16 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
     <ScrollReveal
       variant={isRight ? "fade-left" : "fade-right"}
       delay={120}
-      className={`__box-content max-w-[390px] ${textClass}`}
+      className={`__box-content w-full max-w-none sm:max-w-[390px] ${textClass}`}
     >
-      <div className="__box-content__title text-sm leading-[30px] font-bold tracking-[1.7px]">
+      <div className="__box-content__title text-xs leading-7 font-bold tracking-[1.4px] sm:text-sm sm:leading-[30px] sm:tracking-[1.7px]">
         <span className="font-sans">{feature.label} / </span>
         {feature.labelJa}
       </div>
-      <h3 className="__box-content__heading mt-1 text-2xl leading-8 font-bold tracking-[2.9px]">
+      <h3 className="__box-content__heading mt-1 text-xl leading-7 font-bold tracking-[2px] sm:text-2xl sm:leading-8 sm:tracking-[2.9px]">
         {feature.title}
       </h3>
-      <div className="__box-content__detail mt-2.5 text-[15px] leading-6 tracking-[1.8px]">
+      <div className="__box-content__detail mt-2.5 text-sm leading-6 tracking-[1.5px] sm:text-[15px] sm:tracking-[1.8px]">
         <FeatureDescription
           description={feature.description}
           highlight={feature.highlight}
@@ -54,10 +54,10 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
   const image = (
     <ScrollReveal
       variant={isRight ? "fade-right" : "fade-left"}
-      className={`__box__image shrink-0 ${
+      className={`__box__image w-full shrink-0 ${
         isRight
-          ? "__box__image--right ml-0 md:ml-[4.375rem]"
-          : "mr-0 md:mr-[4.375rem]"
+          ? "__box__image--right md:ml-[4.375rem]"
+          : "md:mr-[4.375rem]"
       }`}
     >
       <Image
@@ -65,10 +65,10 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
         alt={feature.imageAlt}
         width={660}
         height={440}
-        className={`h-auto max-h-[440px] w-full max-w-[660px] object-cover ${
+        className={`h-auto max-h-[240px] w-full object-cover sm:max-h-[320px] md:max-h-[440px] md:max-w-[660px] ${
           isRight
-            ? "rounded-tl-lg rounded-bl-lg md:rounded-tr-none md:rounded-br-none"
-            : "rounded-tr-lg rounded-br-lg"
+            ? "rounded-lg md:rounded-tl-lg md:rounded-bl-lg md:rounded-tr-none md:rounded-br-none"
+            : "rounded-lg md:rounded-tr-lg md:rounded-br-lg md:rounded-tl-none md:rounded-bl-none"
         } xl:rounded-lg`}
       />
     </ScrollReveal>
@@ -76,12 +76,12 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
 
   return (
     <div
-      className="feature-block py-15 md:py-15"
+      className="feature-block py-10 sm:py-15"
       style={{ backgroundColor: feature.bgColor }}
     >
       <div
-        className={`__box mx-auto flex max-w-[1280px] flex-col items-start gap-8 px-5 md:flex-row md:items-center ${
-          isRight ? "__box--right justify-end" : ""
+        className={`__box mx-auto flex max-w-[1280px] flex-col items-stretch gap-6 px-5 sm:gap-8 md:flex-row md:items-center ${
+          isRight ? "__box--right md:justify-end" : ""
         }`}
       >
         {!isRight && image}

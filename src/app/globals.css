@@ -198,4 +198,51 @@ body {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-lato), var(--font-noto-sans-jp), sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .section-title {
+    font-size: clamp(2rem, 8.5vw, 3.625rem);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: clamp(2px, 1.2vw, 7px);
+    color: var(--color-brand);
+  }
+
+  .section-title-en {
+    font-size: clamp(2rem, 8.5vw, 3.625rem);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: clamp(2px, 1.2vw, 7px);
+    color: var(--color-brand);
+  }
+
+  .section-desc {
+    font-size: clamp(0.875rem, 2.5vw, 0.9375rem);
+    line-height: 1.75;
+    letter-spacing: 0.1125em;
+    color: var(--color-foreground);
+  }
+
+  .card-title {
+    font-size: clamp(1.625rem, 6.5vw, 2.8125rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: clamp(2px, 1vw, 5.4px);
+  }
+
+  .card-subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    line-height: 1.5;
+    font-weight: 700;
+    letter-spacing: clamp(1px, 0.5vw, 2.4px);
+  }
+
+  .mission-title {
+    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: clamp(1px, 0.8vw, 4.2px);
+  }
 }

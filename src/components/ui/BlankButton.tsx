@@ -32,7 +32,7 @@ export function BlankButton({
     </>
   );
 
-  const classes = `btn--blank relative flex h-[50px] w-[280px] items-center justify-center rounded-[25px] bg-button no-underline transition-opacity hover:opacity-90 ${className}`;
+  const classes = `btn--blank relative flex h-[50px] w-full max-w-[280px] items-center justify-center rounded-[25px] bg-button no-underline transition-opacity hover:opacity-90 ${className}`;
 
   if (external || href.startsWith("mailto:") || href.startsWith("http")) {
     return (

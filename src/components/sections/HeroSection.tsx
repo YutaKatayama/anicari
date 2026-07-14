@@ -23,12 +23,9 @@ export function HeroSection() {
   }, []);
 
   return (
-    <header className="main-header relative z-0 w-full">
-      <div
-        id="header-logo"
-        className="relative z-[1] bg-brand"
-      >
-        <div className="logo__box mx-auto w-fit px-0 pt-12 pb-3 md:mx-0 md:pl-10 md:pt-14 md:pb-4">
+    <header className="main-header relative z-0 w-full overflow-x-hidden">
+      <div id="header-logo" className="relative z-[1] bg-brand">
+        <div className="logo__box mx-auto w-full max-w-full px-5 pt-10 pb-2 sm:pt-12 sm:pb-3 md:mx-0 md:w-fit md:pl-10 md:pt-14 md:pb-4">
           <div className="logo__box-image animate-fade-in">
             <Image
               src="/logo-sp.svg"
@@ -36,7 +33,7 @@ export function HeroSection() {
               width={320}
               height={48}
               priority
-              className="h-auto w-[93vw] max-w-full object-contain md:hidden"
+              className="mx-auto h-auto w-full max-w-[min(100%,320px)] object-contain md:hidden"
             />
             <Image
               src="/logo-pc.svg"
@@ -44,12 +41,12 @@ export function HeroSection() {
               width={600}
               height={72}
               priority
-              className="hidden h-auto w-[93vw] max-w-[600px] object-contain md:block"
+              className="hidden h-auto w-full max-w-[min(93vw,600px)] object-contain md:block"
             />
           </div>
 
           <div className="logo__box-content relative animate-fade-in text-right">
-            <span className="logo__box-content--small absolute -top-2 right-[3px] text-[0.82rem] leading-[3.5] font-bold tracking-[2.2px] text-on-brand md:text-[1.32rem] md:leading-[2.9] md:tracking-[3px]">
+            <span className="logo__box-content--small absolute -top-1 right-0 text-[0.72rem] leading-[3.2] font-bold tracking-[1.8px] text-on-brand sm:text-[0.82rem] sm:tracking-[2.2px] md:text-[1.32rem] md:leading-[2.9] md:tracking-[3px]">
               {COMPANY.taglineEn}
             </span>
           </div>
@@ -57,11 +54,11 @@ export function HeroSection() {
       </div>
 
       <div id="header-carousel" className="relative bg-brand pb-0">
-        <div className="flex">
-          <div className="indicators__box relative -ml-px flex w-10 shrink-0 flex-col md:w-[6.25rem]">
+        <div className="flex min-w-0">
+          <div className="indicators__box relative -ml-px flex w-8 shrink-0 flex-col sm:w-10 md:w-[6.25rem]">
             <ol className="carousel-indicators relative m-0 flex list-none flex-col items-center p-0">
               {HERO_SLIDES.map((_, index) => (
-                <li key={index} className="mt-2.5">
+                <li key={index} className="mt-2 sm:mt-2.5">
                   <button
                     type="button"
                     aria-label={`スライド ${index + 1} へ移動`}
@@ -77,12 +74,12 @@ export function HeroSection() {
               ))}
             </ol>
 
-            <div className="mt-auto pb-6 md:pb-8">
+            <div className="mt-auto hidden pb-6 sm:block md:pb-8">
               <ScrollIndicator />
             </div>
           </div>
 
-          <div className="carousel-inner relative flex-1 overflow-hidden rounded-tr-[0.8rem] bg-surface">
+          <div className="carousel-inner relative min-w-0 flex-1 overflow-hidden rounded-tr-[0.6rem] bg-surface sm:rounded-tr-[0.8rem]">
             {HERO_SLIDES.map((slide, index) => (
               <div
                 key={`${slide.src}-${activeIndex === index ? "active" : "idle"}`}
@@ -98,19 +95,19 @@ export function HeroSection() {
                   alt={slide.alt}
                   fill
                   priority={index === 0}
-                  sizes="(max-width: 768px) calc(100vw - 2.5rem), calc(100vw - 6.25rem)"
-                  className="rounded-tr-[0.8rem] object-cover object-center"
+                  sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 768px) calc(100vw - 2.5rem), calc(100vw - 6.25rem)"
+                  className="rounded-tr-[0.6rem] object-cover object-center sm:rounded-tr-[0.8rem]"
                 />
               </div>
             ))}
 
-            <div className="pointer-events-none relative h-[calc(100svh-12rem)] min-h-[360px] w-[calc(100vw-2.5rem)] max-w-none md:h-[calc(100svh-8.5rem)] md:min-h-[420px] md:w-[calc(100vw-6.25rem)]" />
+            <div className="pointer-events-none relative h-[52svh] min-h-[220px] w-full sm:h-[58svh] sm:min-h-[280px] md:h-[calc(100svh-8.5rem)] md:min-h-[420px]" />
           </div>
         </div>
       </div>
 
-      <div className="bg-brand px-6 py-4 md:hidden">
-        <p className="text-center text-xs leading-relaxed tracking-[0.2em] text-on-brand">
+      <div className="bg-brand px-5 py-3 sm:px-6 sm:py-4 md:hidden">
+        <p className="text-center text-[10px] leading-relaxed tracking-[0.15em] text-on-brand sm:text-xs sm:tracking-[0.2em]">
           {COMPANY.tagline}
         </p>
       </div>

@@ -13,7 +13,7 @@ import { Footer } from "@/components/layout/Footer";
 export default function Home() {
   return (
     <>
-      <main className="main">
+      <main className="main overflow-x-hidden">
         <HeroSection />
         <MissionSection />
         <ServiceSection />
