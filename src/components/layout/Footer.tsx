@@ -95,7 +95,7 @@ export function Footer() {
         <ScrollReveal variant="fade" delay={160}>
           <div className="mt-8 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
             <Link
-              href="/sitemap"
+              href="/site-map"
               className="text-[10px] font-bold tracking-[0.12em] text-on-brand/80 no-underline hover:text-on-brand sm:text-xs sm:tracking-[0.15em]"
             >
               SITE MAP

@@ -16,7 +16,7 @@ export const SITEMAP_PAGES: SitemapPage[] = [
     priority: 1,
   },
   {
-    path: "/sitemap",
+    path: "/site-map",
     changeFrequency: "monthly",
     priority: 0.5,
   },

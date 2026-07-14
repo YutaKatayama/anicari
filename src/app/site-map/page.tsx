@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "サイトマップ",
   description: `${COMPANY.nameJa}（AniCari）公式サイトのサイトマップ。各セクション・外部リンク一覧。`,
   alternates: {
-    canonical: "/sitemap",
+    canonical: "/site-map",
   },
 };
 
@@ -30,7 +30,7 @@ const SECTION_LABELS: Record<string, string> = {
   "#contact": "お問い合わせ",
 };
 
-export default function SitemapPage() {
+export default function SiteMapPage() {
   const externalLinks = EXTERNAL_NAV_LINKS.flat();
 
   return (
