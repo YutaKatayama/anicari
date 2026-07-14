@@ -1,3 +1,4 @@
+import { BOOKING_LINKS } from "@/constants/booking";
 import { SOCIAL_BY_ID } from "@/constants/social";
 
 export type NavLink = {
@@ -22,6 +23,18 @@ export const MAIN_NAV_LINKS: NavLink[] = [
 ];
 
 export const EXTERNAL_NAV_LINKS: ExternalNavLink[][] = [
+  [
+    {
+      label: BOOKING_LINKS.interview.navLabel,
+      href: BOOKING_LINKS.interview.href,
+      external: true,
+    },
+    {
+      label: BOOKING_LINKS.eventCalendar.navLabel,
+      href: BOOKING_LINKS.eventCalendar.href,
+      external: true,
+    },
+  ],
   [
     {
       label: "INSTAGRAM",

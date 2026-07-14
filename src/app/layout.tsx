@@ -1,5 +1,6 @@
 import type { Viewport } from "next";
 import { Lato, Noto_Sans_JP } from "next/font/google";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { Header } from "@/components/layout/Header";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { createSiteMetadata } from "@/lib/seo/metadata";
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${lato.variable} ${notoSansJp.variable}`}>
       <body className="min-h-screen overflow-x-hidden antialiased">
+        <GoogleAnalytics />
         <JsonLd />
         <Header />
         {children}

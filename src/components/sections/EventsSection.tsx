@@ -1,4 +1,4 @@
-import { EVENT_CTA, EVENTS } from "@/constants/events";
+import { EVENT_CALENDAR_CTA, EVENT_CTA, EVENTS } from "@/constants/events";
 import { BlankButton } from "@/components/ui/BlankButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
@@ -80,10 +80,16 @@ export function EventsSection() {
         </div>
 
         <ScrollReveal variant="fade-up" delay={120}>
-          <div className="mt-8 flex justify-center sm:mt-10">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:mt-10 sm:flex-row sm:gap-6">
             <BlankButton
               label={EVENT_CTA.label}
               href={EVENT_CTA.href}
+              external
+              className="w-full max-w-[280px]"
+            />
+            <BlankButton
+              label={EVENT_CALENDAR_CTA.label}
+              href={EVENT_CALENDAR_CTA.href}
               external
               className="w-full max-w-[280px]"
             />

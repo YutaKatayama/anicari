@@ -3,6 +3,7 @@ import { BlankButton } from "@/components/ui/BlankButton";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { BOOKING_LINKS } from "@/constants/booking";
 import { SOCIAL_BY_ID } from "@/constants/social";
 
 export function ContactSection() {
@@ -24,7 +25,7 @@ export function ContactSection() {
           <SocialLinks className="mb-8 sm:mb-12" />
         </ScrollReveal>
 
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 md:gap-12">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 md:gap-12">
           <ScrollReveal variant="fade-up" delay={100}>
             <div className="h-full rounded-2xl bg-section px-5 py-6 sm:px-6 sm:py-8 md:px-8">
               <p className="text-xs font-bold tracking-[0.2em] text-brand uppercase">
@@ -37,6 +38,25 @@ export function ContactSection() {
                 <BlankButton
                   label="公式LINEへ"
                   href={SOCIAL_BY_ID.line.href}
+                  external
+                  className="w-full max-w-[280px]"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-up" delay={140}>
+            <div className="h-full rounded-2xl bg-section px-5 py-6 sm:px-6 sm:py-8 md:px-8">
+              <p className="text-xs font-bold tracking-[0.2em] text-brand uppercase">
+                Interview
+              </p>
+              <p className="mt-4 text-sm leading-7 tracking-[1.5px] text-foreground sm:text-[15px] sm:tracking-[1.8px]">
+                {BOOKING_LINKS.interview.description}
+              </p>
+              <div className="mt-6">
+                <BlankButton
+                  label={BOOKING_LINKS.interview.label}
+                  href={BOOKING_LINKS.interview.href}
                   external
                   className="w-full max-w-[280px]"
                 />

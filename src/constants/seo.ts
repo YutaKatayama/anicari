@@ -2,7 +2,7 @@ import { COMPANY } from "@/constants/company";
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://anicari.vercel.app";
+  "https://anicari.com";
 
 export const SEO_KEYWORDS = [
   "Anicari",

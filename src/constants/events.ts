@@ -1,3 +1,4 @@
+import { BOOKING_LINKS } from "@/constants/booking";
 import { SOCIAL_BY_ID } from "@/constants/social";
 
 export type EventItem = {
@@ -36,4 +37,9 @@ export const EVENTS: EventItem[] = [
 export const EVENT_CTA = {
   label: "イベントに申し込む",
   href: SOCIAL_BY_ID.line.href,
+};
+
+export const EVENT_CALENDAR_CTA = {
+  label: BOOKING_LINKS.eventCalendar.label,
+  href: BOOKING_LINKS.eventCalendar.href,
 };
