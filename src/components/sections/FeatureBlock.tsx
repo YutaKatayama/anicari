@@ -33,7 +33,7 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
     <ScrollReveal
       variant={isRight ? "fade-left" : "fade-right"}
       delay={120}
-      className={`__box-content w-full max-w-none sm:max-w-[390px] ${textClass}`}
+      className={`__box-content w-full min-w-0 md:w-1/2 lg:w-auto lg:max-w-[390px] ${textClass}`}
     >
       <div className="__box-content__title text-xs leading-7 font-bold tracking-[1.4px] sm:text-sm sm:leading-[30px] sm:tracking-[1.7px]">
         <span className="font-sans">{feature.label} / </span>
@@ -54,10 +54,8 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
   const image = (
     <ScrollReveal
       variant={isRight ? "fade-right" : "fade-left"}
-      className={`__box__image w-full shrink-0 ${
-        isRight
-          ? "__box__image--right md:ml-[4.375rem]"
-          : "md:mr-[4.375rem]"
+      className={`__box__image w-full min-w-0 md:w-1/2 lg:w-auto lg:max-w-[660px] lg:shrink-0 ${
+        isRight ? "lg:ml-[4.375rem]" : "lg:mr-[4.375rem]"
       }`}
     >
       <Image
@@ -80,8 +78,8 @@ export function FeatureBlock({ feature }: { feature: FeatureItem }) {
       style={{ backgroundColor: feature.bgColor }}
     >
       <div
-        className={`__box mx-auto flex max-w-[1280px] flex-col items-stretch gap-6 px-5 sm:gap-8 md:flex-row md:items-center ${
-          isRight ? "__box--right md:justify-end" : ""
+        className={`__box mx-auto flex max-w-[1280px] min-w-0 flex-col items-stretch gap-6 px-5 sm:gap-8 md:flex-row md:items-center md:gap-8 lg:gap-12 ${
+          isRight ? "md:flex-row-reverse" : ""
         }`}
       >
         {!isRight && image}
