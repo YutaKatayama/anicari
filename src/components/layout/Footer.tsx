@@ -93,9 +93,17 @@ export function Footer() {
         </ScrollReveal>
 
         <ScrollReveal variant="fade" delay={160}>
-          <p className="mt-8 text-[10px] tracking-[0.12em] text-on-brand/80 sm:mt-12 sm:text-xs sm:tracking-[0.15em]">
-            ©{currentYear} {COMPANY.name} All Rights Reserved.
-          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
+            <Link
+              href="/sitemap"
+              className="text-[10px] font-bold tracking-[0.12em] text-on-brand/80 no-underline hover:text-on-brand sm:text-xs sm:tracking-[0.15em]"
+            >
+              SITE MAP
+            </Link>
+            <p className="text-[10px] tracking-[0.12em] text-on-brand/80 sm:text-xs sm:tracking-[0.15em]">
+              ©{currentYear} {COMPANY.name} All Rights Reserved.
+            </p>
+          </div>
         </ScrollReveal>
       </div>
     </footer>
