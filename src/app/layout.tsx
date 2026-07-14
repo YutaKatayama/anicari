@@ -1,7 +1,8 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
 import { Lato, Noto_Sans_JP } from "next/font/google";
 import { Header } from "@/components/layout/Header";
-import { COMPANY } from "@/constants/company";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { createSiteMetadata } from "@/lib/seo/metadata";
 import "./globals.css";
 
 const lato = Lato({
@@ -16,13 +17,12 @@ const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
-export const metadata: Metadata = {
-  title: `${COMPANY.name} | ペット業界特化型キャリア支援`,
-  description: COMPANY.mission,
-};
+export const metadata = createSiteMetadata();
 
 export const viewport: Viewport = {
   themeColor: "#DFA3B1",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${lato.variable} ${notoSansJp.variable}`}>
       <body className="min-h-screen overflow-x-hidden antialiased">
+        <JsonLd />
         <Header />
         {children}
       </body>
