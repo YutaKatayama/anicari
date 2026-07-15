@@ -2,6 +2,7 @@ import { COMPANY } from "@/constants/company";
 import { EVENTS } from "@/constants/events";
 import { SEO, SITE_URL } from "@/constants/seo";
 import { SOCIAL_LINKS } from "@/constants/social";
+import { createEventSchema } from "@/lib/seo/event-schema";
 
 export function JsonLd() {
   const organization = {
@@ -60,36 +61,7 @@ export function JsonLd() {
   };
 
   const featuredEvent = EVENTS.find((event) => event.featured);
-
-  const eventSchema = featuredEvent
-    ? {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        name: featuredEvent.subtitle,
-        description: `${SEO.siteNameJa}の${featuredEvent.title}。動物看護師就活・ペット業界のキャリアイベント。`,
-        eventAttendanceMode:
-          "https://schema.org/OfflineEventAttendanceMode",
-        eventStatus: "https://schema.org/EventScheduled",
-        location: {
-          "@type": "Place",
-          name: featuredEvent.venue,
-          address: {
-            "@type": "PostalAddress",
-            addressCountry: "JP",
-          },
-        },
-        organizer: {
-          "@id": `${SITE_URL}/#organization`,
-        },
-        offers: {
-          "@type": "Offer",
-          url: SITE_URL,
-          availability: "https://schema.org/InStock",
-          price: "0",
-          priceCurrency: "JPY",
-        },
-      }
-    : null;
+  const eventSchema = featuredEvent ? createEventSchema(featuredEvent) : null;
 
   const schemas = [organization, website, webPage, eventSchema].filter(Boolean);
 

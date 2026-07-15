@@ -1,6 +1,7 @@
 import { COMPANY_INFO } from "@/constants/company-info";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionTransition } from "@/components/ui/SectionTransition";
 
 function CompanyValue({ label, value }: { label: string; value: string }) {
   if (label === "Mail") {
@@ -30,8 +31,8 @@ function CompanyValue({ label, value }: { label: string; value: string }) {
 
 export function CompanySection() {
   return (
-    <section id="company" className="bg-section px-5 py-14 sm:py-20 md:px-10 md:py-24">
-      <div className="mx-auto max-w-[900px]">
+    <section id="company" className="bg-section">
+      <div className="mx-auto max-w-[900px] px-5 py-14 sm:py-20 md:px-10 md:py-24">
         <ScrollReveal variant="fade-up">
           <SectionHeading en="COMPANY" ja="団体概要" className="mb-8 sm:mb-10 md:mb-14" />
         </ScrollReveal>
@@ -67,6 +68,10 @@ export function CompanySection() {
             </tbody>
           </table>
         </ScrollReveal>
+      </div>
+
+      <div className="bg-section leading-[0]">
+        <SectionTransition to="background" className="-mb-px" />
       </div>
     </section>
   );

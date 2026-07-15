@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { COMPANY, HERO_SLIDES } from "@/constants/company";
 import { ScrollIndicator } from "@/components/ui/ScrollIndicator";
+import { SectionTransition } from "@/components/ui/SectionTransition";
 
 const SLIDE_INTERVAL_MS = 8000;
 
@@ -74,42 +75,48 @@ export function HeroSection() {
               ))}
             </ol>
 
-            <div className="mt-auto hidden pb-6 sm:block md:pb-8">
+            <div className="mt-auto pb-4 sm:pb-6 md:pb-8">
               <ScrollIndicator />
             </div>
           </div>
 
-          <div className="carousel-inner relative min-w-0 flex-1 overflow-hidden rounded-tr-[0.6rem] bg-surface sm:rounded-tr-[0.8rem]">
-            {HERO_SLIDES.map((slide, index) => (
-              <div
-                key={`${slide.src}-${activeIndex === index ? "active" : "idle"}`}
-                className={`carousel-item absolute inset-0 transition-[opacity,filter] duration-1000 ease-linear ${
-                  activeIndex === index
-                    ? "animate-hero-zoom z-10 opacity-100 brightness-100"
-                    : "z-0 opacity-0 brightness-150"
-                }`}
-                aria-hidden={activeIndex !== index}
-              >
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 768px) calc(100vw - 2.5rem), calc(100vw - 6.25rem)"
-                  className="rounded-tr-[0.6rem] object-cover object-center sm:rounded-tr-[0.8rem]"
-                />
-              </div>
-            ))}
+          <div className="min-w-0 flex-1 pr-[1cm] pb-[1cm]">
+            <div className="carousel-inner relative overflow-hidden rounded-[0.6rem] bg-surface sm:rounded-[0.8rem]">
+              {HERO_SLIDES.map((slide, index) => (
+                <div
+                  key={`${slide.src}-${activeIndex === index ? "active" : "idle"}`}
+                  className={`carousel-item absolute inset-0 transition-[opacity,filter] duration-1000 ease-linear ${
+                    activeIndex === index
+                      ? "animate-hero-zoom z-10 opacity-100 brightness-100"
+                      : "z-0 opacity-0 brightness-150"
+                  }`}
+                  aria-hidden={activeIndex !== index}
+                >
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 640px) calc(100vw - 2rem - 1cm), (max-width: 768px) calc(100vw - 2.5rem - 1cm), calc(100vw - 6.25rem - 1cm)"
+                    className="rounded-[0.6rem] object-cover object-center sm:rounded-[0.8rem]"
+                  />
+                </div>
+              ))}
 
-            <div className="pointer-events-none relative h-[52svh] min-h-[220px] w-full sm:h-[58svh] sm:min-h-[280px] md:h-[calc(100svh-8.5rem)] md:min-h-[420px]" />
+              <div className="pointer-events-none relative h-[52svh] min-h-[220px] w-full sm:h-[58svh] sm:min-h-[280px] md:h-[calc(100svh-8.5rem)] md:min-h-[420px]" />
+
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex items-end justify-end p-4 sm:p-6 md:p-8">
+                <p className="max-w-[min(100%,16rem)] text-right text-[10px] leading-relaxed font-bold tracking-[0.16em] text-on-brand [text-shadow:0_1px_8px_rgba(0,0,0,0.35)] sm:max-w-xs sm:text-xs sm:tracking-[0.18em] md:text-sm">
+                  {COMPANY.tagline}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-brand px-5 py-3 sm:px-6 sm:py-4 md:hidden">
-        <p className="text-center text-[10px] leading-relaxed tracking-[0.15em] text-on-brand sm:text-xs sm:tracking-[0.2em]">
-          {COMPANY.tagline}
-        </p>
+      <div className="bg-brand leading-[0]">
+        <SectionTransition to="surface" className="-mb-px" />
       </div>
     </header>
   );

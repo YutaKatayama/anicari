@@ -2,15 +2,16 @@ import { MATERIALS } from "@/constants/materials";
 import { BlankButton } from "@/components/ui/BlankButton";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionTransition } from "@/components/ui/SectionTransition";
 
 export function MaterialsSection() {
   return (
     <section
       id="materials"
-      className="bg-background px-5 py-14 sm:py-20 md:px-10 md:py-24"
+      className="bg-background"
       aria-labelledby="materials-title"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1280px] px-5 py-14 sm:py-20 md:px-10 md:py-24">
         <ScrollReveal variant="fade-up">
           <SectionHeading
             en={MATERIALS.titleEn}
@@ -58,6 +59,10 @@ export function MaterialsSection() {
             </p>
           </div>
         </ScrollReveal>
+      </div>
+
+      <div className="bg-background leading-[0]">
+        <SectionTransition to="section" className="-mb-px" />
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
 import { FEATURES } from "@/constants/features";
 import { FeatureBlock } from "@/components/sections/FeatureBlock";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionTransition } from "@/components/ui/SectionTransition";
 
 export function FeaturesSection() {
+  const lastFeatureBg = FEATURES[FEATURES.length - 1].bgColor;
+
   return (
     <section id="features" className="features-section overflow-x-hidden bg-background">
       <ScrollReveal variant="fade-up">
@@ -20,6 +23,10 @@ export function FeaturesSection() {
         {FEATURES.map((feature) => (
           <FeatureBlock key={feature.id} feature={feature} />
         ))}
+      </div>
+
+      <div className="leading-[0]" style={{ backgroundColor: lastFeatureBg }}>
+        <SectionTransition to="section" className="-mb-px" />
       </div>
     </section>
   );

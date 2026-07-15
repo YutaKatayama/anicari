@@ -7,11 +7,12 @@ import {
 } from "@/constants/results";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SectionTransition } from "@/components/ui/SectionTransition";
 
 export function ResultsSection() {
   return (
-    <section id="results" className="bg-section px-5 py-14 sm:py-20 md:px-10 md:py-24">
-      <div className="mx-auto max-w-[1280px]">
+    <section id="results" className="bg-section">
+      <div className="mx-auto max-w-[1280px] px-5 py-14 sm:py-20 md:px-10 md:py-24">
         <ScrollReveal variant="fade-up">
           <SectionHeading en="RESULTS" ja="実績" />
         </ScrollReveal>
@@ -88,6 +89,10 @@ export function ResultsSection() {
             </div>
           </ScrollReveal>
         </div>
+      </div>
+
+      <div className="bg-section leading-[0]">
+        <SectionTransition to="background" className="-mb-px" />
       </div>
     </section>
   );

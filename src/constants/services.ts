@@ -54,11 +54,3 @@ export const SERVICES: ServiceItem[] = [
     external: true,
   },
 ];
-
-export const SERVICE_INTRO = {
-  desktop:
-    "AniCariは、動物看護学生と動物病院・\nペット業界企業をつなぐ、\nキャリア支援団体です。",
-  mobile:
-    "AniCariは、動物看護学生と動物病院・ペット業界企業をつなぐ、キャリア支援団体です。",
-  note: "業界の人材不足と早期離職という課題に向き合う、新しい就活の場を提供しています。",
-};
